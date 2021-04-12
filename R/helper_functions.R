@@ -32,7 +32,7 @@ check_if_numeric <- function(x){
 
 c_to_int <- function(x){
   if(is.numeric(x)){
-    x <- as.integer(x)
+    x <- as.numeric(x)
   }
   return(x)
 }
