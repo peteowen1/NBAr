@@ -79,7 +79,7 @@
 get_defense <- function(season,
                        type,
                        defense_category,
-                       per_mode = "PerGame",
+                       per_mode = "Totals",
                        season_type = "Regular+Season",
                        season_segment = "",
                        game_segment ="",
@@ -130,6 +130,10 @@ get_defense <- function(season,
 
     verbose_dataset(verbose, dataset)
 
+    dataset$season <- season
+    dataset$xfgm <- dataset[,11] * dataset[,13]
+    dataset$xfgm <- dataset$xfgm[[1]] 
+    
     return(dataset)}
 , error=function(e) print(e$message))
 }
